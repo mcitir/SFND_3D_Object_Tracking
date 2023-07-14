@@ -190,7 +190,17 @@ void computeTTCCamera(std::vector<cv::KeyPoint> &kptsPrev, std::vector<cv::KeyPo
 The most important factor in the stable calculation of the TTC is the deletion of data other than required fields.  Filtering prevents unnecessary data from disturbing the stability of the calculation.
 
 ### FP.6 Performance Evaluation 2
-In the table below you can see the absolute value of the **TTC** difference between camera and lidar and the total number of computable values by detector and descriptor. In the **Harris** detector, the number of scenes that can be calculated is quite low and the difference in calculation between camera and lidar is quite high. In **SHITOMASI**, on the other hand, the difference between camera and lidar is small. Combinations with the **AKAZE** detector also produced very good values.
+In the table below you can see all performances of the TTC (Lidar and Camera) calculation for all combinations of detector and descriptor. As can be seen, Harris and the **ORB** detector produce unreliable results. In **SHITOMASI** in contrast, the difference between camera and lidar is very low. Likewise, combinations with the **AKAZE** detector produced very good values.
+
+You can see the performance of detectors and identifiers for TTC (Lidar and Camera) in more detail in the table below. Also, **frame by frame** differences are given. If the detector/identifier failed to produce a result, this is indicated by N/A and nan.
+
+![Shitomasi](images/shitomasi.png)
+![Harris](images/harris.png)
+![Fast](images/fast.png)
+![Brisk](images/brisk.png)
+![Akaze](images/akaze.png)
+![Sift](images/sift.png)
+![Orb ](images/orb.png)
 
 **Summary**
 
@@ -201,9 +211,6 @@ In the table below you can see the absolute value of the **TTC** difference betw
 | Number of Valid TTC | 17 | 18 | 18 | 17 | 9 | 9 | 8 | 8 | 16 | 18 | 18 | 18 | 18 | 18 | 18 | 18 | 18 | 18 | 18 | 18 | 18 |
 
 
-
-
-##### NOTE: You can find all detailed results in the folder of `./dat/results`.
 
 ---
 ## SFND 3D Object Tracking
